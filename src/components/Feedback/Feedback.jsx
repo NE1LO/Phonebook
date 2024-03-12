@@ -34,7 +34,8 @@ const Feedback = ({ feedback, total }) => {
         </li>
         <li>
           <p>
-            Positive: {positiveFeedback} {emoji()}
+            Positive: {positiveFeedback}
+            {total ? "%" : ""} {emoji()}
           </p>
         </li>
       </ul>

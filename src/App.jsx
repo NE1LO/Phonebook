@@ -41,7 +41,7 @@ function App() {
         reset={reset}
         total={total}
       />
-      <Feedback feedback={feedback} total={total} />
+      {total !== 0 && <Feedback feedback={feedback} total={total} />}
     </>
   );
 }

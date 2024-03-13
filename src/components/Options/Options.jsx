@@ -20,13 +20,13 @@ const Options = ({ good, neutral, bad, reset, total }) => {
             Bad
           </button>
         </li>
-        {total !== 0 && (
+        {total ? (
           <li>
             <button onClick={reset} type="button">
               Reset
             </button>
           </li>
-        )}
+        ) : null}
       </ul>
     </div>
   );

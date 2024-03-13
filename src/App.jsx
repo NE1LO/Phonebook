@@ -16,8 +16,14 @@ function App() {
   const neutral = () =>
     setFeedback({ ...feedback, neutral: feedback.neutral + 1 });
   const bad = () => setFeedback({ ...feedback, bad: feedback.bad + 1 });
-  const reset = () => setFeedback({ good: 0, bad: 0, neutral: 0 });
+  const reset = () => {
+    setFeedback({ good: 0, bad: 0, neutral: 0 });
+    localStorage.removeItem(key);
+  };
+
   const total = feedback.good + feedback.neutral + feedback.bad;
+
+  const rate = Math.round(((feedback.good + feedback.neutral) / total) * 100);
 
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem(key)) || {
@@ -27,6 +33,7 @@ function App() {
     };
     setFeedback({ ...data });
   }, []);
+
   useEffect(() => {
     if (total > 0) localStorage.setItem(key, JSON.stringify(feedback));
   }, [feedback]);
@@ -41,7 +48,9 @@ function App() {
         reset={reset}
         total={total}
       />
-      {total !== 0 && <Feedback feedback={feedback} total={total} />}
+      {total !== 0 && (
+        <Feedback feedback={feedback} total={total} rate={rate} />
+      )}
     </>
   );
 }

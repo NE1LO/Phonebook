@@ -1,17 +1,12 @@
 import css from "./Feedback.module.css";
 
-const Feedback = ({ feedback, total }) => {
-  const positiveFeedback =
-    total !== 0
-      ? Math.round(((feedback.good + feedback.neutral) / total) * 100)
-      : "😴";
-
+const Feedback = ({ feedback, total, rate }) => {
   const emoji = () => {
-    if (positiveFeedback >= 90) {
+    if (rate >= 90) {
       return "😎";
-    } else if (positiveFeedback >= 50) {
+    } else if (rate >= 50) {
       return "😃";
-    } else if (positiveFeedback < 50) {
+    } else if (rate < 50) {
       return "🤬";
     }
   };
@@ -34,7 +29,7 @@ const Feedback = ({ feedback, total }) => {
         </li>
         <li>
           <p>
-            Positive: {positiveFeedback}
+            Positive: {rate}
             {total ? "%" : ""} {emoji()}
           </p>
         </li>

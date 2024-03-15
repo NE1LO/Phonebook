@@ -1,59 +1,53 @@
-import { useEffect, useState } from "react";
 import "./App.css";
-import Feedback from "./components/Feedback/Feedback";
-import Description from "./components/Description/Description";
-import Options from "./components/Options/Options";
-import Notification from "./components/Notification/Notification";
-const key = "912873u1h231";
+import { useEffect, useState } from "react";
+import ContactForm from "./components/ContactForm/ContactForm";
+import ContactList from "./components/ContactList/ContactList";
+import SearchBox from "./components/SearchBox/SearchBox";
+import { nanoid } from "nanoid";
+const KEY = "1j2n3kj1nsfk";
 
 function App() {
-  const [feedback, setFeedback] = useState({
-    good: 0,
-    bad: 0,
-    neutral: 0,
+  // ==============================================================
+  const [contacts, setContacts] = useState(() => {
+    const data = JSON.parse(localStorage.getItem(KEY)) || [
+      { id: "id-1", name: "Rosie Simpson", number: "459-12-56" },
+      { id: "id-2", name: "Hermione Kline", number: "443-89-12" },
+      { id: "id-3", name: "Eden Clements", number: "645-17-79" },
+      { id: "id-4", name: "Annie Copeland", number: "227-91-26" },
+    ];
+    return data;
   });
 
-  const good = () => setFeedback({ ...feedback, good: feedback.good + 1 });
-  const neutral = () =>
-    setFeedback({ ...feedback, neutral: feedback.neutral + 1 });
-  const bad = () => setFeedback({ ...feedback, bad: feedback.bad + 1 });
-  const reset = () => {
-    setFeedback({ good: 0, bad: 0, neutral: 0 });
-    localStorage.removeItem(key);
+  const [inputValue, setInputValue] = useState("");
+  // ==============================================================
+  useEffect(() => {
+    localStorage.setItem(KEY, JSON.stringify(contacts));
+  }, [inputValue, contacts]);
+
+  const deleteContact = (e) => {
+    setContacts(contacts.filter((item) => item.id !== e.target.id));
   };
 
-  const total = feedback.good + feedback.neutral + feedback.bad;
+  const handleSubmit = (values, actions) => {
+    setContacts([...contacts, { ...values, id: nanoid() }]);
+    actions.resetForm();
+  };
 
-  const rate = Math.round(((feedback.good + feedback.neutral) / total) * 100);
+  const changeInput = (e) => {
+    setInputValue(`${e.target.value.trim()}`);
+  };
 
-  useEffect(() => {
-    const data = JSON.parse(localStorage.getItem(key)) || {
-      good: 0,
-      bad: 0,
-      neutral: 0,
-    };
-    setFeedback({ ...data });
-  }, []);
-
-  useEffect(() => {
-    if (total > 0) localStorage.setItem(key, JSON.stringify(feedback));
-  }, [feedback]);
+  const filterContacts = () =>
+    contacts.filter((item) =>
+      item.name.toLowerCase().includes(inputValue.toLowerCase())
+    );
 
   return (
     <>
-      <Description />
-      <Options
-        good={good}
-        neutral={neutral}
-        bad={bad}
-        reset={reset}
-        total={total}
-      />
-      {total !== 0 ? (
-        <Feedback feedback={feedback} total={total} rate={rate} />
-      ) : (
-        <Notification />
-      )}
+      <h1>Phonebook</h1>
+      <ContactForm handleSubmit={handleSubmit} />
+      <SearchBox values value={inputValue} changeInput={changeInput} />
+      <ContactList contacts={filterContacts()} deleteContact={deleteContact} />
     </>
   );
 }

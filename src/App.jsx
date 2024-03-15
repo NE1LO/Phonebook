@@ -3,6 +3,7 @@ import "./App.css";
 import Feedback from "./components/Feedback/Feedback";
 import Description from "./components/Description/Description";
 import Options from "./components/Options/Options";
+import Notification from "./components/Notification/Notification";
 const key = "912873u1h231";
 
 function App() {
@@ -48,8 +49,10 @@ function App() {
         reset={reset}
         total={total}
       />
-      {total !== 0 && (
+      {total !== 0 ? (
         <Feedback feedback={feedback} total={total} rate={rate} />
+      ) : (
+        <Notification />
       )}
     </>
   );

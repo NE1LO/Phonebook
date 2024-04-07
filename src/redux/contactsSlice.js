@@ -1,5 +1,5 @@
 import { createSlice, nanoid } from "@reduxjs/toolkit";
-import { fetchContacts, deleteContact, addContact } from "./getTasksApi";
+import { fetchContacts, deleteContact, addContact } from "./contactsOps";
 
 const contactsSlice = createSlice({
   name: "contacts",

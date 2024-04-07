@@ -1,7 +1,7 @@
 import "./App.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { fetchContacts } from "./redux/getTasksApi";
+import { fetchContacts } from "./redux/contactsOps";
 import ContactForm from "./components/ContactForm/ContactForm";
 import ContactList from "./components/ContactList/ContactList";
 import SearchBox from "./components/SearchBox/SearchBox";

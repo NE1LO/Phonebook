@@ -2,7 +2,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import css from "./ContactForm.module.css";
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
-import { addContact } from "../../redux/contactsSlice";
+import { addContact } from "../../redux/getTasksApi";
 
 const validation = Yup.object().shape({
   name: Yup.string()
@@ -30,21 +30,26 @@ const ContactForm = () => {
       validationSchema={validation}
     >
       <Form className={css.form}>
-        <div>
-          <label className={css.label}>
-            Name
-            <Field type="text" name="name" />
-          </label>
-          <ErrorMessage name="name" as="span" />
+        <div className={css.inputBlock}>
+          <div>
+            <label className={css.label}>
+              Name
+              <Field className={css.input} type="text" name="name" />
+            </label>
+            <ErrorMessage name="name" as="span" />
+          </div>
+          <div>
+            <label className={css.label}>
+              Number
+              <Field className={css.input} type="text" name="number" />
+            </label>
+            <ErrorMessage name="number" as="span" />
+          </div>
         </div>
-        <div>
-          <label className={css.label}>
-            Number
-            <Field type="text" name="number" />
-          </label>
-          <ErrorMessage name="number" as="span" />
-        </div>
-        <button type="submit">Add contact</button>
+
+        <button className={css.addContactBtn} type="submit">
+          Add contact
+        </button>
       </Form>
     </Formik>
   );

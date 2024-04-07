@@ -1,6 +1,6 @@
 import css from "./Contact.module.css";
 import { useDispatch } from "react-redux";
-import { deleteContact } from "../../redux/contactsSlice";
+import { deleteContact } from "../../redux/getTasksApi";
 
 const Contact = ({ contact: { name, number, id } }) => {
   const dispatch = useDispatch();
@@ -12,8 +12,8 @@ const Contact = ({ contact: { name, number, id } }) => {
   return (
     <div className={css.contactBlock}>
       <ul className={css.list}>
-        <li>{name}</li>
-        <li>{number}</li>
+        <li className={css.listItemName}>{name}</li>
+        <li className={css.listItemNumber}>{number}</li>
       </ul>
       <button onClick={deleteContacts} id={id} type="button">
         Delete

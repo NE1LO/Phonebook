@@ -15,6 +15,7 @@ const SearchBox = () => {
     <label className={css.label}>
       Find Contacts by name
       <input
+        className={css.input}
         type="text"
         value={filter}
         placeholder="Search"

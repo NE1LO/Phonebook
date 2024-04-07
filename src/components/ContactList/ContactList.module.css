@@ -1,23 +1,8 @@
 .numberList {
-  margin-top: 60px;
+  margin: 20px auto;
+  max-width: 1200px;
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 24px;
-}
-
-.numberlistItem {
-  width: 380px;
-  border: 1px solid white;
-  border-radius: 5px;
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  gap: 30px;
-}
-
-.numberlistItemBlock {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  gap: 5px;
+  gap: 10px;
 }

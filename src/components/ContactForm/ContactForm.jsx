@@ -18,6 +18,7 @@ const validation = Yup.object().shape({
 const ContactForm = () => {
   const dispatch = useDispatch();
   const handleSubmit = (values, action) => {
+    console.log(values);
     dispatch(addContact(values));
     action.resetForm();
   };

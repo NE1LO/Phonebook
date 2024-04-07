@@ -25,7 +25,7 @@ const ContactForm = () => {
 
   return (
     <Formik
-      initialValues={{ name: "", number: "" }}
+      initialValues={{ name: "", number: null }}
       onSubmit={handleSubmit}
       validationSchema={validation}
     >

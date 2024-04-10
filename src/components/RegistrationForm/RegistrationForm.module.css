@@ -1,0 +1,64 @@
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  margin: 200px auto 0 auto;
+  padding: 40px;
+  width: 450px;
+  height: 250px;
+  background-color: #dbdbdb;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px 1px #8f8f8f;
+}
+
+.inputBlock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.input {
+  color: black;
+  width: 240px;
+  height: 30px;
+  border-radius: 10px;
+  padding: 0 10px;
+  outline: none;
+  border: 1px solid #909090;
+  background-color: white;
+  transition: 0.25s;
+}
+
+.input:hover,
+.input:focus {
+  border-color: black;
+}
+
+.input::placeholder {
+  color: rgb(0, 0, 0);
+}
+
+.errorMessage {
+  color: rgb(12, 12, 12);
+  position: absolute;
+  top: 5px;
+  left: 280px;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.btnLogin {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 25px;
+  width: 100px;
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+}

@@ -1,0 +1,26 @@
+.txtBlock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 120px auto 0 auto;
+  padding: 40px;
+  width: 900px;
+  height: 450px;
+  background-color: #dbdbdb;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px 1px #8f8f8f;
+}
+
+.textList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.text {
+  color: black;
+  font-family: "Montserrat", sans-serif;
+  font-size: 22px;
+}

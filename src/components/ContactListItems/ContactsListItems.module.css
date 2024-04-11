@@ -1,0 +1,23 @@
+.list {
+  box-sizing: border-box;
+  width: 1280px;
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 16px;
+}
+
+.listItems {
+  box-sizing: border-box;
+  width: 300px;
+  height: 80px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #dbdbdb;
+  border-radius: 20px;
+  border: 1px solid black;
+}

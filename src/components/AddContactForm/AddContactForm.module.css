@@ -4,10 +4,10 @@
   align-items: center;
   flex-direction: column;
   gap: 10px;
-  margin: 200px auto 0 auto;
+  margin: 20px auto 0 auto;
   padding: 40px;
-  width: 450px;
-  height: 250px;
+  width: 390px;
+  height: 100px;
   background-color: #dbdbdb;
   border-radius: 15px;
   box-shadow: 5px 5px 5px 1px #8f8f8f;
@@ -18,21 +18,22 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 30px;
+  gap: 10px;
 }
 
-.loginInputBlock {
+.block {
   position: relative;
 }
+
 .errorMessage {
   color: rgb(12, 12, 12);
   position: absolute;
   top: 5px;
-  left: 280px;
+  left: 270px;
   font-weight: 500;
   font-size: 12px;
 }
-
+/* ------------------------------input style */
 .input {
   color: black;
   width: 240px;
@@ -51,11 +52,12 @@
 }
 
 .input::placeholder {
-  color: rgb(0, 0, 0);
+  color: rgb(107, 107, 107);
 }
+/* ----------------------------------------- */
 
-.btnLogin {
-  margin-top: 30px;
+.btnAdd {
+  margin-top: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -65,4 +67,13 @@
   background-color: white;
   border: 1px solid black;
   color: black;
+  transition: 0.35s;
+}
+
+.btnAdd:focus {
+  outline: none;
+}
+.btnAdd:hover {
+  color: white;
+  background-color: green;
 }

@@ -5,8 +5,8 @@ import { useDispatch } from "react-redux";
 import { addContact } from "../../redux/contacts/operations";
 
 const validation = Yup.object().shape({
-  name: Yup.string().min(3, "Short!").max(50, "Long!").required("Required"),
-  number: Yup.string().min(3, "Short!").max(50, "Long!").required("Required"),
+  name: Yup.string().min(3, "Short!").max(25, "Long!").required("Required"),
+  number: Yup.string().min(3, "Short!").max(25, "Long!").required("Required"),
 });
 
 const AddContactForm = () => {

@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { register } from "../../redux/auth/operations";
+import toast from "react-hot-toast";
 
 const validation = Yup.object().shape({
   email: Yup.string()
@@ -20,7 +21,10 @@ const validation = Yup.object().shape({
 });
 
 const RegistrationForm = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
+    .unwrap()
+    .then(() => toast.success("Registration was successful"))
+    .catch(() => toast.error("Registration failed"));
 
   const handleSubmit = (values, actions) => {
     console.log(values);

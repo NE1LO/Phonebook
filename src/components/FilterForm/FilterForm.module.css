@@ -1,0 +1,36 @@
+.wrapp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 90px auto 0 auto;
+  padding: 10px 40px 10px 40px;
+  width: 390px;
+  height: 20px;
+  background-color: #e9e9e9;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px 1px #8f8f8f;
+  border: 1px solid #909090;
+}
+
+.input {
+  margin-left: 15px;
+  color: black;
+  width: 250px;
+  height: 20px;
+  border-radius: 5px;
+  padding: 0 10px;
+  outline: none;
+  border: 1px solid #909090;
+  background-color: white;
+  transition: 0.25s;
+}
+
+.input:hover,
+.input:focus {
+  border-color: black;
+}
+
+.input::placeholder {
+  color: rgb(107, 107, 107);
+}

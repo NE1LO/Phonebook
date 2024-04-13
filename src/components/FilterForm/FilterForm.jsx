@@ -1,12 +1,11 @@
 import React from "react";
+import css from "./FilterForm.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { getFilters } from "../../redux/filters/selectors";
 import { setFilter } from "../../redux/filters/slice";
 
 const FilterForm = () => {
   const dispatch = useDispatch();
-
-  console.log(getFilters);
   const filter = useSelector(getFilters);
 
   const changeInput = (e) => {
@@ -15,15 +14,15 @@ const FilterForm = () => {
   };
 
   return (
-    <label>
-      Find contacts by name
+    <div className={css.wrapp}>
       <input
+        className={css.input}
+        placeholder="Find contacts by name"
         type="text"
         onChange={changeInput}
         value={filter}
-        placeholder="Search"
       />
-    </label>
+    </div>
   );
 };
 

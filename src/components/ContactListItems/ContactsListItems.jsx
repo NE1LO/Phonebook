@@ -9,10 +9,10 @@ const ContactsListItems = () => {
   const contacts = useSelector(getContactsItems);
   const filter = useSelector(getFilters);
 
-  const filteredContacts = contacts.filter((contact) =>
-    contact.name.toLowerCase().includes(filter.toLowerCase())
-  );
-
+  const filteredContacts = () =>
+    contacts.filter((item) =>
+      item.name.toLowerCase().includes(filter.toLowerCase())
+    );
   const dispatch = useDispatch();
   const handleClick = (contact) => {
     dispatch(deleteContact(contact));
@@ -20,7 +20,7 @@ const ContactsListItems = () => {
 
   return (
     <ul className={css.list}>
-      {filteredContacts.map((contact) => (
+      {filteredContacts().map((contact) => (
         <li className={css.listItems} key={contact.id}>
           <div>
             <p>{contact.name}</p>

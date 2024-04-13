@@ -2,6 +2,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import css from "./LoginForm.module.css";
 import { useDispatch } from "react-redux";
 import { logIn } from "../../redux/auth/operations";
+import toast from "react-hot-toast";
 import * as Yup from "yup";
 
 const validation = Yup.object().shape({
@@ -19,7 +20,11 @@ const LoginForm = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = (values, actions) => {
-    dispatch(logIn(values));
+    dispatch(logIn(values))
+      .unwrap()
+      .then(() => toast.success("Login was successful!"))
+      .catch(() => toast.success("Something went wrong, try again"));
+
     console.log(values);
     actions.resetForm();
   };

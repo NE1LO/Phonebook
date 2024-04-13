@@ -11,19 +11,19 @@ import { getIsRefreshing } from "../redux/auth/selectors";
 // IMPORT COMPONENTS---------------------------------
 //---------------------------------------------------
 import { Loader } from "./Loader/Loader";
-// import Loyout from "./Loyout/Loyout";
-// import Home from "../pages/Home/Home";
-// import Login from "../pages/login/Login";
-// import Register from "../pages/Register/Register";
-// import Contacts from "../pages/Contacts/Contacts";
+import Loyout from "./Loyout/Loyout";
+import Home from "../pages/Home/Home";
+import Login from "../pages/login/Login";
+import Register from "../pages/Register/Register";
+import Contacts from "../pages/Contacts/Contacts";
 import { PrivateRoute } from "./PrivateRoute";
 import { RestrictedRoute } from "./RestrictedRoute";
 
-const Loyout = lazy(() => import("./Loyout/Loyout"));
-const Home = lazy(() => import("../pages/Home/Home"));
-const Login = lazy(() => import("../pages/login/Login"));
-const Register = lazy(() => import("../pages/Register/Register"));
-const Contacts = lazy(() => import("../pages/Contacts/Contacts"));
+// const Loyout = lazy(() => import("./Loyout/Loyout"));
+// const Home = lazy(() => import("../pages/Home/Home"));
+// const Login = lazy(() => import("../pages/login/Login"));
+// const Register = lazy(() => import("../pages/Register/Register"));
+// const Contacts = lazy(() => import("../pages/Contacts/Contacts"));
 
 function App() {
   const isRefreshing = useSelector(getIsRefreshing);

@@ -21,14 +21,14 @@ const validation = Yup.object().shape({
 });
 
 const RegistrationForm = () => {
-  const dispatch = useDispatch()
-    .unwrap()
-    .then(() => toast.success("Registration was successful"))
-    .catch(() => toast.error("Registration failed"));
+  const dispatch = useDispatch();
 
   const handleSubmit = (values, actions) => {
     console.log(values);
-    dispatch(register(values));
+    dispatch(register(values))
+      .unwrap()
+      .then(() => toast.success("Registration was successful"))
+      .catch(() => toast.error("Registration failed"));
     actions.resetForm();
   };
 

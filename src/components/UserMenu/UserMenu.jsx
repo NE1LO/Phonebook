@@ -1,11 +1,11 @@
 import css from "./UserMenu.module.css";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getUser } from "../../redux/auth/selectors";
+import { selectUser } from "../../redux/auth/selectors";
 import { logOut } from "../../redux/auth/operations";
 
 const UserMenu = () => {
-  const user = useSelector(getUser);
+  const user = useSelector(selectUser);
 
   const dispatch = useDispatch();
   const handleClick = () => {

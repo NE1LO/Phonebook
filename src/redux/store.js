@@ -16,7 +16,7 @@ import storage from "redux-persist/lib/storage";
 
 // PERSISTOR cfg
 const authPersistConfig = {
-  key: "authSlice",
+  key: "auth",
   storage,
   whitelist: ["token"],
 };

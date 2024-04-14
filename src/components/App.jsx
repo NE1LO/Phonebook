@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { refreshUser } from "../redux/auth/operations";
 import { Toaster } from "react-hot-toast";
 // import { getContactsItems } from "../redux/contacts/selectors";
-import { getIsRefreshing } from "../redux/auth/selectors";
+import { selectIsRefreshing } from "../redux/auth/selectors";
 //---------------------------------------------------
 // IMPORT COMPONENTS---------------------------------
 //---------------------------------------------------
@@ -26,7 +26,7 @@ const Register = lazy(() => import("../pages/Register/Register"));
 const Contacts = lazy(() => import("../pages/Contacts/Contacts"));
 
 function App() {
-  const isRefreshing = useSelector(getIsRefreshing);
+  const isRefreshing = useSelector(selectIsRefreshing);
 
   const dispatch = useDispatch();
 

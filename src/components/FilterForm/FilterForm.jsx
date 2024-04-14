@@ -1,12 +1,12 @@
 import React from "react";
 import css from "./FilterForm.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { getFilters } from "../../redux/filters/selectors";
+import { selectNameFilter } from "../../redux/filters/selectors";
 import { setFilter } from "../../redux/filters/slice";
 
 const FilterForm = () => {
   const dispatch = useDispatch();
-  const filter = useSelector(getFilters);
+  const filter = useSelector(selectNameFilter);
 
   const changeInput = (e) => {
     const word = e.target.value.trim();

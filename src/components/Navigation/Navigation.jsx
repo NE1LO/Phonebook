@@ -2,10 +2,10 @@ import React from "react";
 import css from "./Navigation.module.css";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { getIsLoggedIn } from "../../redux/auth/selectors";
+import { selectIsLoggedIn } from "../../redux/auth/selectors";
 
 const Navigation = () => {
-  const isLoggedIn = useSelector(getIsLoggedIn);
+  const isLoggedIn = useSelector(selectIsLoggedIn);
   return (
     <ul className={css.navigationList}>
       <li>

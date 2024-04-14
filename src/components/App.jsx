@@ -11,11 +11,6 @@ import { selectIsRefreshing } from "../redux/auth/selectors";
 // IMPORT COMPONENTS---------------------------------
 //---------------------------------------------------
 import { Loader } from "./Loader/Loader";
-// import Loyout from "./Loyout/Loyout";
-// import Home from "../pages/Home/Home";
-// import Login from "../pages/login/Login";
-// import Register from "../pages/Register/Register";
-// import Contacts from "../pages/Contacts/Contacts";
 import { PrivateRoute } from "./PrivateRoute";
 import { RestrictedRoute } from "./RestrictedRoute";
 
@@ -44,16 +39,20 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route
-            path="/Contacts"
-            element={<PrivateRoute component={Contacts} />}
+            path="/contacts"
+            element={<PrivateRoute component={Contacts} redirectTo="/login" />}
           ></Route>
           <Route
-            path="/Login"
-            element={<RestrictedRoute component={Login} />}
+            path="/login"
+            element={
+              <RestrictedRoute component={Login} redirectTo="/contacts" />
+            }
           ></Route>
           <Route
-            path="/Register"
-            element={<RestrictedRoute component={Register} />}
+            path="/register"
+            element={
+              <RestrictedRoute component={Register} redirectTo="/contacts" />
+            }
           ></Route>
         </Routes>
       </Suspense>

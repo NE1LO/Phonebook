@@ -14,7 +14,7 @@ import { Loader } from "./Loader/Loader";
 import { PrivateRoute } from "./PrivateRoute";
 import { RestrictedRoute } from "./RestrictedRoute";
 
-const Loyout = lazy(() => import("./Loyout/Loyout"));
+const Layout = lazy(() => import("./Layout/Layout"));
 const Home = lazy(() => import("../pages/Home/Home"));
 const Login = lazy(() => import("../pages/login/Login"));
 const Register = lazy(() => import("../pages/Register/Register"));
@@ -35,25 +35,29 @@ function App() {
     <>
       <Suspense fallback={<div>Loading...</div>}>
         <Toaster position="top-right" reverseOrder={false} />
-        <Loyout />
+
         <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route
-            path="/contacts"
-            element={<PrivateRoute component={Contacts} redirectTo="/login" />}
-          ></Route>
-          <Route
-            path="/login"
-            element={
-              <RestrictedRoute component={Login} redirectTo="/contacts" />
-            }
-          ></Route>
-          <Route
-            path="/register"
-            element={
-              <RestrictedRoute component={Register} redirectTo="/contacts" />
-            }
-          ></Route>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />}></Route>
+            <Route
+              path="/contacts"
+              element={
+                <PrivateRoute component={Contacts} redirectTo="/login" />
+              }
+            />
+            <Route
+              path="/login"
+              element={
+                <RestrictedRoute component={Login} redirectTo="/contacts" />
+              }
+            />
+            <Route
+              path="/register"
+              element={
+                <RestrictedRoute component={Register} redirectTo="/contacts" />
+              }
+            />
+          </Route>
         </Routes>
       </Suspense>
     </>

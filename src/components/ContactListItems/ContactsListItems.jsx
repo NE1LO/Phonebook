@@ -1,9 +1,11 @@
 import React from "react";
 import css from "./ContactsListItems.module.css";
+import { MdDelete } from "react-icons/md";
 // import { getContactsItems } from "../../redux/contacts/selectors";
 import { deleteContact } from "../../redux/contacts/operations";
 import { useSelector, useDispatch } from "react-redux";
 import { selectFilteredContacts } from "../../redux/contacts/selectors";
+import toast from "react-hot-toast";
 
 const ContactsListItems = () => {
   const filter = useSelector(selectFilteredContacts);
@@ -15,7 +17,10 @@ const ContactsListItems = () => {
 
   const dispatch = useDispatch();
   const handleClick = (contact) => {
-    dispatch(deleteContact(contact));
+    dispatch(deleteContact(contact))
+      .unwrap()
+      .then(() => toast.success("contact deleted"))
+      .catch(() => toast.error("Opps, try again"));
   };
 
   return (
@@ -26,8 +31,17 @@ const ContactsListItems = () => {
             <p>{contact.name}</p>
             <p>{contact.number}</p>
           </div>
-          <button onClick={() => handleClick(contact)} type="button">
-            Delete
+          <button
+            className={css.btn}
+            onClick={() => handleClick(contact)}
+            type="button"
+          >
+            <MdDelete
+              style={{
+                width: "30px",
+                height: "30px",
+              }}
+            />
           </button>
         </li>
       ))}

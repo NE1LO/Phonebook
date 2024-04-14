@@ -1,8 +1,10 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import css from "./AddContactForm.module.css";
+import { IoMdPersonAdd } from "react-icons/io";
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
 import { addContact } from "../../redux/contacts/operations";
+import toast from "react-hot-toast";
 
 const validation = Yup.object().shape({
   name: Yup.string().min(3, "Short!").max(25, "Long!").required("Required"),
@@ -13,7 +15,10 @@ const AddContactForm = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = (values, actions) => {
-    dispatch(addContact(values));
+    dispatch(addContact(values))
+      .unwrap()
+      .then(() => toast.success("contact add 😎"))
+      .catch(() => toast.error("oops, try again"));
     actions.resetForm();
   };
 
@@ -50,7 +55,12 @@ const AddContactForm = () => {
         </div>
 
         <button className={css.btnAdd} type="submit">
-          Add contact
+          <IoMdPersonAdd
+            style={{
+              width: "40px",
+              height: "40px",
+            }}
+          />
         </button>
       </Form>
     </Formik>

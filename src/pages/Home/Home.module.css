@@ -1,26 +1,88 @@
-.txtBlock {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 120px auto 0 auto;
-  padding: 40px;
-  width: 900px;
-  height: 450px;
-  background-color: #dbdbdb;
-  border-radius: 15px;
-  box-shadow: 5px 5px 5px 1px #8f8f8f;
+.wrapp {
+  box-sizing: border-box;
+  margin: 0 auto;
+  width: 1248px;
+  position: relative;
 }
 
-.textList {
+/* BLOCK */
+.txtBlock {
+  position: absolute;
+  left: 0;
+  top: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  gap: 40px;
+  align-items: center;
+  margin: 60px 0;
+  padding: 40px;
+  width: 900px;
+  height: 100px;
+  background-color: #efefef;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px 1px #8f8f8f;
+  animation: fromLeft 0.2s ease-in-out 0s 1 normal forwards;
+}
+
+.txtBlockTwo {
+  position: absolute;
+  right: 0;
+  top: 230px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 60px 0;
+  padding: 40px;
+  width: 900px;
+  height: 100px;
+  background-color: #efefef;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px 1px #8f8f8f;
+  animation: fromRigth 0.2s ease-in-out 0s 1 normal forwards;
+}
+.txtBlockThree {
+  position: absolute;
+  left: 0;
+  top: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 60px 0;
+  padding: 40px;
+  width: 1100px;
+  height: 150px;
+  background-color: #efefef;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px 1px #8f8f8f;
+  animation: fromLeft 0.2s ease-in-out 0s 1 normal forwards;
 }
 
 .text {
   color: black;
   font-family: "Montserrat", sans-serif;
   font-size: 22px;
+}
+
+/* animation */
+@keyframes fromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fromRigth {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }

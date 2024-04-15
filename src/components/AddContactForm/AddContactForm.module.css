@@ -89,3 +89,23 @@
     transform-origin: 50% 0%;
   }
 }
+
+/* media screen */
+
+@media screen and (min-width: 320px) and (max-width: 375px) {
+  .form {
+    gap: 5px;
+    margin: 10px auto 0 auto;
+    padding: 10px;
+    width: 250px;
+    height: 200px;
+  }
+  .inputBlock {
+    gap: 30px;
+  }
+
+  .input {
+    width: 240px;
+    height: 50px;
+  }
+}

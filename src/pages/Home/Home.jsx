@@ -17,7 +17,7 @@ const Home = () => {
           <FaReact
             style={{
               width: "160px",
-              height: "160px",
+              height: "60px",
               margin: "20px",
               color: "#61DBFB",
             }}

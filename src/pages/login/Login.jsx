@@ -3,7 +3,11 @@ import css from "./Login.module.css";
 import LoginForm from "../../components/LoginForm/LoginForm";
 
 const Login = () => {
-  return <LoginForm />;
+  return (
+    <div className={css.wrapper}>
+      <LoginForm />
+    </div>
+  );
 };
 
 export default Login;

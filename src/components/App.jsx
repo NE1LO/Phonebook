@@ -33,7 +33,7 @@ function App() {
     <Loader />
   ) : (
     <>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense>
         <Toaster position="top-right" reverseOrder={false} />
 
         <Routes>

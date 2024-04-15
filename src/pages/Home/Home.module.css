@@ -71,7 +71,7 @@
 }
 
 /* Meadia screen */
-@media screen and (min-width: 375px) {
+@media screen and (min-width: 320px) {
   .wrapp {
     max-width: 375px;
     gap: 30px;

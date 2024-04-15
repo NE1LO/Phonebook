@@ -15,6 +15,7 @@
 .btn {
   width: 50px;
   height: 50px;
+  color: #ffff;
   border: none;
   transition: 0.3s;
 }
@@ -23,7 +24,7 @@
   color: red;
 }
 
-@media screen and (min-width: 320px) {
+@media screen and (min-width: 320px) and (max-width: 375px) {
   .UserBlock {
     gap: 0px;
   }
@@ -42,4 +43,8 @@
 @media screen and (min-width: 768px) {
 }
 @media screen and (min-width: 1280px) {
+  .btn {
+    width: 50px;
+    height: 50px;
+  }
 }

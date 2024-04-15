@@ -1,4 +1,5 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import Button from "@mui/material/Button";
 import css from "./LoginForm.module.css";
 import { useDispatch } from "react-redux";
 import { logIn } from "../../redux/auth/operations";
@@ -23,8 +24,7 @@ const LoginForm = () => {
     dispatch(logIn(values))
       .unwrap()
       .then(() => toast.success("Login was successful!"))
-      .catch(() => toast.success("Something went wrong, try again"));
-
+      .catch(() => toast.error("Something went wrong, try again"));
     console.log(values);
     actions.resetForm();
   };
@@ -45,7 +45,7 @@ const LoginForm = () => {
               className={css.input}
               type="email"
               name="email"
-              placeholder="email"
+              placeholder="Your Email"
             />
           </div>
           <div className={css.loginInputBlock}>
@@ -55,14 +55,19 @@ const LoginForm = () => {
             <Field
               type="password"
               name="password"
-              placeholder="Password"
+              placeholder="Your Password"
               className={css.input}
             />
           </div>
         </div>
-        <button className={css.btnLogin} type="submit">
+        <Button
+          type="submit"
+          style={{ backgroundColor: "", color: "" }}
+          className={css.btn}
+          variant="contained"
+        >
           Log in
-        </button>
+        </Button>
       </Form>
     </Formik>
   );

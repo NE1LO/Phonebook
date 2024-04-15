@@ -1,4 +1,5 @@
 import css from "./RegistrationForm.module.css";
+import Button from "@mui/material/Button";
 import { useDispatch } from "react-redux";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
@@ -24,7 +25,6 @@ const RegistrationForm = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = (values, actions) => {
-    console.log(values);
     dispatch(register(values))
       .unwrap()
       .then(() => toast.success("Registration was successful"))
@@ -60,7 +60,7 @@ const RegistrationForm = () => {
             className={css.input}
             type="name"
             name="name"
-            placeholder="name"
+            placeholder="Name"
           />
         </div>
         <div style={{ position: "relative" }}>
@@ -75,9 +75,14 @@ const RegistrationForm = () => {
             className={css.input}
           />
         </div>
-        <button className={css.btnLogin} type="submit">
-          Register
-        </button>
+        <Button
+          type="submit"
+          style={{ backgroundColor: "", color: "" }}
+          className={css.btn}
+          variant="contained"
+        >
+          Registration
+        </Button>
       </Form>
     </Formik>
   );

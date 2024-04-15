@@ -7,9 +7,8 @@
   padding: 40px;
   width: 450px;
   height: 250px;
-  background-color: #dbdbdb;
+  background-color: #4f4f4f;
   border-radius: 15px;
-  box-shadow: 5px 5px 5px 1px #8f8f8f;
   animation: zoom 0.3s linear 0s 1 normal forwards;
 }
 
@@ -24,11 +23,10 @@
   color: black;
   width: 240px;
   height: 30px;
+  border: none;
   border-radius: 10px;
   padding: 0 10px;
   outline: none;
-  border: 1px solid #909090;
-  background-color: white;
   transition: 0.25s;
 }
 
@@ -37,12 +35,8 @@
   border-color: black;
 }
 
-.input::placeholder {
-  color: rgb(0, 0, 0);
-}
-
 .errorMessage {
-  color: rgb(12, 12, 12);
+  color: rgb(255, 0, 0);
   position: absolute;
   top: 5px;
   left: 280px;
@@ -50,17 +44,9 @@
   font-size: 12px;
 }
 
-.btnLogin {
-  margin-top: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: 25px;
-  width: 100px;
-  background-color: white;
-  border: 1px solid black;
-  color: black;
+.btn {
+  height: 40px;
+  width: 150px;
 }
 
 /* animation */
@@ -98,13 +84,6 @@
     left: 200px;
     font-size: 8px;
   }
-
-  .btnLogin {
-    margin-top: 40px;
-    height: 45px;
-    width: 140px;
-    color: black;
-  }
 }
 @media screen and (min-width: 768px) {
   .form {
@@ -118,6 +97,7 @@
   }
 
   .input {
+    font-family: "Courier New", Courier, monospace;
     width: 400px;
     height: 50px;
   }
@@ -127,41 +107,26 @@
     left: 340px;
     font-size: 12px;
   }
-
-  .btnLogin {
-    margin-top: 40px;
-    height: 45px;
-    width: 140px;
-    color: black;
-  }
 }
 @media screen and (min-width: 1280px) {
   .form {
-    gap: 10px;
+    gap: 20px;
     padding: 40px;
-    width: 450px;
-    height: 250px;
-  }
-
-  .inputBlock {
-    gap: 50px;
+    width: 600px;
+    height: 350px;
   }
 
   .input {
-    width: 240px;
-    height: 30px;
+    margin-bottom: 20px;
+    background-color: #e7e7e7;
+    width: 400px;
+    height: 40px;
     padding: 0 10px;
   }
 
   .errorMessage {
-    top: 5px;
-    left: 280px;
+    top: 10px;
+    left: 350px;
     font-size: 12px;
-  }
-
-  .btnLogin {
-    margin-top: 30px;
-    height: 25px;
-    width: 100px;
   }
 }

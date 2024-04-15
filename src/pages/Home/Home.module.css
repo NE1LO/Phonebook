@@ -14,9 +14,10 @@
   justify-content: center;
   align-items: center;
   height: 100%;
-  background-color: #efefef;
+  background-color: #4f4f4f;
   border-radius: 15px;
   animation: fromLeft 0.2s ease-in-out 0s 1 normal forwards;
+  color: #ffff;
 }
 .txtBlockTwo {
   align-self: end;
@@ -24,7 +25,7 @@
   justify-content: center;
   align-items: center;
   height: 100%;
-  background-color: #efefef;
+  background-color: #4f4f4f;
   border-radius: 15px;
 
   animation: fromRigth 0.2s ease-in-out 0s 1 normal forwards;
@@ -36,7 +37,7 @@
   align-items: center;
 
   height: 100%;
-  background-color: #efefef;
+  background-color: #4f4f4f;
   border-radius: 15px;
   animation: fromLeft 0.2s ease-in-out 0s 1 normal forwards;
 }
@@ -80,18 +81,15 @@
   .txtBlock {
     padding: 10px;
     max-width: 300px;
-    box-shadow: 3px 3px 3px 1px #8f8f8f;
   }
 
   .txtBlockTwo {
     padding: 10px;
     max-width: 300px;
-    box-shadow: 3px 3px 3px 1px #8f8f8f;
   }
   .txtBlockThree {
     padding: 5px;
     max-width: 350px;
-    box-shadow: 3px 3px 3px 1px #8f8f8f;
   }
 
   .text {
@@ -107,18 +105,15 @@
   .txtBlock {
     padding: 20px;
     max-width: 600px;
-    box-shadow: 5px 5px 5px 1px #8f8f8f;
   }
 
   .txtBlockTwo {
     padding: 20px;
     max-width: 700px;
-    box-shadow: 5px 5px 5px 1px #8f8f8f;
   }
   .txtBlockThree {
     padding: 20px;
     max-width: 700px;
-    box-shadow: 5px 5px 5px 1px #8f8f8f;
   }
 
   .text {
@@ -134,21 +129,20 @@
   .txtBlock {
     padding: 20px;
     max-width: 900px;
-    box-shadow: 5px 5px 5px 1px #8f8f8f;
   }
 
   .txtBlockTwo {
     max-width: 900px;
-    box-shadow: 5px 5px 5px 1px #8f8f8f;
+
     padding: 20px;
   }
   .txtBlockThree {
     padding: 20px;
     max-width: 1100px;
-    box-shadow: 5px 5px 5px 1px #8f8f8f;
   }
 
   .text {
     font-size: 22px;
+    color: #ffff;
   }
 }

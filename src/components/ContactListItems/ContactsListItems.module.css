@@ -24,6 +24,7 @@
 }
 
 .btn {
+  border: none;
   height: 100%;
   width: 60px;
   transition: 0.3s;

@@ -1,6 +1,6 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import css from "./AddContactForm.module.css";
-import { IoMdPersonAdd } from "react-icons/io";
+import Button from "@mui/material/Button";
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
 import { addContact } from "../../redux/contacts/operations";
@@ -54,14 +54,14 @@ const AddContactForm = () => {
           </div>
         </div>
 
-        <button className={css.btnAdd} type="submit">
-          <IoMdPersonAdd
-            style={{
-              width: "40px",
-              height: "40px",
-            }}
-          />
-        </button>
+        <Button
+          type="submit"
+          style={{ backgroundColor: "", color: "" }}
+          className={css.btn}
+          variant="contained"
+        >
+          Add contact
+        </Button>
       </Form>
     </Formik>
   );

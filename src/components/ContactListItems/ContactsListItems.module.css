@@ -2,23 +2,29 @@
   box-sizing: border-box;
   width: 1280px;
   display: flex;
-  margin: 20px 0 60px 0;
-  /* justify-content: space-between; */
+  margin: 10px 0 60px 0;
   align-items: center;
   flex-wrap: wrap;
   gap: 15px;
-  padding: 30px 16px 30px 16px;
+  padding: 10px 16px 10px 16px;
+}
+
+.userBlock {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .listItems {
   box-sizing: border-box;
   width: 300px;
-  height: 80px;
+  height: 100px;
   padding: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #f5f5f5;
+  background-color: #4f4f4f;
   border-radius: 20px;
   border: 1px solid black;
 }

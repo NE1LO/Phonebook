@@ -50,11 +50,14 @@ export const refreshUser = createAsyncThunk(
     try {
       const reduxState = thunkAPI.getState();
       const token = reduxState.auth.token;
+      if (!token) {
+        throw new Error("Токен авторизації недоступний");
+      }
       setAuthHeader(token);
       const response = await axios.get("/users/current");
       return response.data;
     } catch (error) {
-      thunkAPI.rejectWithValue(error.message);
+      thunkAPI.rejectWithValue("Помилка перезавантаження користувача");
     }
   },
   {

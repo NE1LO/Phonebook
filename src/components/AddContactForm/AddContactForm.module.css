@@ -4,14 +4,12 @@
   align-items: center;
   flex-direction: column;
   gap: 10px;
-  margin: 20px auto 0 auto;
+  margin: 20px auto 20px auto;
   padding: 40px;
-  width: 390px;
-  height: 100px;
-  background-color: #dbdbdb;
+  width: 600px;
+  height: 200px;
+  background-color: #4f4f4f;
   border-radius: 15px;
-  border: 1px solid black;
-  box-shadow: 5px 5px 5px 1px #8f8f8f;
   animation: zoom 0.15s linear 0s 1 normal forwards;
 }
 
@@ -20,7 +18,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 10px;
+  gap: 30px;
 }
 
 .block {
@@ -28,22 +26,23 @@
 }
 
 .errorMessage {
-  color: rgb(12, 12, 12);
+  color: rgb(255, 255, 255);
   position: absolute;
   top: 5px;
-  left: 270px;
-  font-weight: 500;
-  font-size: 12px;
+  left: 350px;
+  font-weight: 200;
+  font-size: 14px;
 }
 /* ------------------------------input style */
 .input {
   color: black;
-  width: 240px;
+  background-color: #e7e7e7;
+  width: 300px;
   height: 30px;
   border-radius: 10px;
   padding: 0 10px;
   outline: none;
-  background-color: #ededed;
+
   border: none;
   transition: 0.25s;
 }
@@ -58,23 +57,10 @@
 }
 /* ----------------------------------------- */
 
-.btnAdd {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: 80px;
-  width: 80px;
-  background-color: transparent;
-  color: rgb(109, 109, 109);
-  border: none;
-  outline: none;
-  transition: 0.35s;
-}
-
-.btnAdd:hover {
-  color: rgb(16, 157, 0);
+.btn {
+  margin-top: 40px;
+  height: 40px;
+  width: 140px;
 }
 
 /* animation */

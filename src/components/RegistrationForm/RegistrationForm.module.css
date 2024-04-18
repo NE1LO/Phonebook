@@ -20,7 +20,8 @@
 }
 
 .input {
-  color: black;
+  color: #ffff;
+  background-color: #e7e7e7;
   width: 240px;
   height: 30px;
   border: none;
@@ -107,15 +108,16 @@
   }
 }
 
-@media screen and (min-width: 320px) {
+@media screen and (min-width: 320px) and (max-width: 768px) {
   .form {
     padding: 10px;
-    width: 300px;
+    width: 280px;
     height: 350px;
+    gap: 30px;
   }
 
   .inputBlock {
-    gap: 50px;
+    gap: 24px;
   }
 
   .input {
@@ -129,7 +131,7 @@
     font-size: 8px;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1280px) {
   .form {
     padding: 10px;
     width: 550px;

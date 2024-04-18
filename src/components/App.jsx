@@ -22,7 +22,6 @@ const Contacts = lazy(() => import("../pages/Contacts/Contacts"));
 
 function App() {
   const isRefreshing = useSelector(selectIsRefreshing);
-
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -33,7 +32,7 @@ function App() {
     <Loader />
   ) : (
     <>
-      <Suspense>
+      <Suspense fallback={<Loader />}>
         <Toaster position="top-right" reverseOrder={false} />
 
         <Routes>

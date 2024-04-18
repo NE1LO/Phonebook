@@ -9,40 +9,47 @@
 
 /* BLOCK */
 .txtBlock {
+  padding: 60px 0;
   align-self: start;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
+  width: 800px;
   background-color: #4f4f4f;
   border-radius: 15px;
   animation: fromLeft 0.2s ease-in-out 0s 1 normal forwards;
   color: #ffff;
 }
 .txtBlockTwo {
+  padding: 60px 0;
   align-self: end;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
+  width: 800px;
   background-color: #4f4f4f;
   border-radius: 15px;
-
+  color: #ffff;
   animation: fromRigth 0.2s ease-in-out 0s 1 normal forwards;
 }
 .txtBlockThree {
+  padding: 60px 0;
   align-self: start;
   display: flex;
   justify-content: center;
   align-items: center;
-
+  color: #ffff;
   height: 100%;
+  width: 800px;
   background-color: #4f4f4f;
   border-radius: 15px;
   animation: fromLeft 0.2s ease-in-out 0s 1 normal forwards;
 }
 .text {
   color: black;
+  color: #ffff;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -71,32 +78,34 @@
   }
 }
 
-/* Meadia screen */
-@media screen and (min-width: 320px) {
+@media screen and (min-width: 320px) and (max-width: 767px) {
   .wrapp {
     max-width: 375px;
-    gap: 30px;
+    gap: 10px;
   }
 
   .txtBlock {
-    padding: 10px;
-    max-width: 300px;
+    align-self: center;
+    padding: 5px;
+    width: 280px;
   }
 
   .txtBlockTwo {
+    align-self: center;
     padding: 10px;
-    max-width: 300px;
+    width: 280px;
   }
   .txtBlockThree {
+    align-self: center;
     padding: 5px;
-    max-width: 350px;
+    width: 280px;
   }
 
   .text {
     font-size: 14px;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1280px) {
   .wrapp {
     max-width: 768px;
     gap: 8vh;
@@ -109,7 +118,7 @@
 
   .txtBlockTwo {
     padding: 20px;
-    max-width: 700px;
+    max-width: 600px;
   }
   .txtBlockThree {
     padding: 20px;
@@ -118,31 +127,5 @@
 
   .text {
     font-size: 20px;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .wrapp {
-    max-width: 1280px;
-    gap: 10vh;
-  }
-
-  .txtBlock {
-    padding: 20px;
-    max-width: 900px;
-  }
-
-  .txtBlockTwo {
-    max-width: 900px;
-
-    padding: 20px;
-  }
-  .txtBlockThree {
-    padding: 20px;
-    max-width: 1100px;
-  }
-
-  .text {
-    font-size: 22px;
-    color: #ffff;
   }
 }

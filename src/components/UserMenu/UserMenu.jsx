@@ -15,7 +15,7 @@ const UserMenu = () => {
 
   return (
     <div className={css.UserBlock}>
-      <h2 className={css.userName}>Welcome {user.name}</h2>
+      <h2 className={css.userName}> {user && user.name}</h2>
       <button className={css.btn} onClick={handleClick} type="button">
         <CiLogin
           style={{

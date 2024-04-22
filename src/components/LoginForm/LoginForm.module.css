@@ -9,7 +9,7 @@
   height: 250px;
   background-color: #4f4f4f;
   border-radius: 15px;
-  animation: bounceLeft 1s ease 0s 1 normal forwards;
+  animation: fadeLeft 0.2s ease 0s 1 normal forwards;
 }
 
 .inputBlock {
@@ -60,71 +60,15 @@
 
 /* animation */
 
-@keyframes bounceLeft {
-  0% {
-    animation-timing-function: ease-in;
-    opacity: 0;
-    transform: translateX(-300px);
-  }
-
-  38% {
-    animation-timing-function: ease-out;
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  55% {
-    animation-timing-function: ease-in;
-    transform: translateX(-68px);
-  }
-
-  72% {
-    animation-timing-function: ease-out;
-    transform: translateX(0);
-  }
-
-  81% {
-    animation-timing-function: ease-in;
-    transform: translateX(-28px);
-  }
-
-  90% {
-    animation-timing-function: ease-out;
-    transform: translateX(0);
-  }
-
-  95% {
-    animation-timing-function: ease-in;
-    transform: translateX(-8px);
-  }
-
-  100% {
-    animation-timing-function: ease-out;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fade {
+@keyframes fadeLeft {
   0% {
     opacity: 0;
-    transform: scale(1.2);
+    transform: translateX(-50px);
   }
 
   100% {
     opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes zoom {
-  0% {
-    transform: scale(0.1);
-    transform-origin: 50% 0%;
-  }
-
-  100% {
-    transform: scale(1);
-    transform-origin: 50% 0%;
+    transform: translateX(0);
   }
 }
 
